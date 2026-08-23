@@ -223,6 +223,38 @@
   }
   .card-link:hover{color:var(--amber); border-color:var(--amber);}
   .card-link svg{width:12px; height:12px;}
+
+  /* ---------- FEATURED PROJECTS ---------- */
+  .featured-stack{display:flex; flex-direction:column; gap:24px; margin-bottom:40px;}
+  .featured{
+    background:var(--surface); border:1px solid var(--amber-dim); border-radius:var(--radius);
+    padding:26px 24px 24px; position:relative; overflow:hidden;
+    display:grid; grid-template-columns:minmax(220px, 280px) 1fr; gap:28px; align-items:start;
+    transition:border-color 0.25s, box-shadow 0.25s;
+  }
+  .featured::before{
+    content:''; position:absolute; top:-1px; left:20px; right:20px; height:1px;
+    background:repeating-linear-gradient(90deg, var(--amber) 0 6px, transparent 6px 12px);
+    opacity:0.7;
+  }
+  .featured:hover{border-color:var(--amber); box-shadow:0 10px 34px rgba(0,0,0,0.4);}
+  .featured-badge{
+    position:absolute; top:0; right:0;
+    font-family:var(--mono); font-size:0.62rem; letter-spacing:0.14em; text-transform:uppercase;
+    background:var(--amber); color:var(--bg); font-weight:700;
+    padding:5px 12px; border-bottom-left-radius:var(--radius);
+  }
+  .featured-media{
+    position:relative; width:100%; border:1px solid var(--line);
+    border-radius:var(--radius); overflow:hidden; background:var(--bg-alt);
+  }
+  .featured-media::before{content:''; display:block; padding-top:177.78%;} /* 9:16 - vertical / Shorts */
+  .featured-media.wide::before{padding-top:56.25%;}                        /* 16:9 - normal video */
+  .featured-media iframe{position:absolute; inset:0; width:100%; height:100%; border:0;}
+  .featured-body{min-width:0;}
+  .featured-body h3{font-family:var(--display); font-size:1.3rem; margin-bottom:10px; color:var(--text);}
+  .featured-body p{color:var(--text-dim); font-size:0.94rem; margin-bottom:16px;}
+  .featured-links{display:flex; flex-wrap:wrap; gap:20px;}
   .photo-note{font-family:var(--mono); font-size:0.65rem; color:var(--text-dim); opacity:0.6; margin-top:6px;}
 
   /* ---------- EXPERIENCE ---------- */
@@ -319,6 +351,8 @@
     .home-grid{flex-direction:column-reverse; text-align:left; padding:40px 0;}
     .portrait-frame{width:180px; height:220px;}
     .edu-card{flex-direction:column;}
+    .featured{grid-template-columns:1fr; gap:20px;}
+    .featured-media{max-width:320px; margin:0 auto;}
   }
 </style>
 </head>
@@ -382,6 +416,45 @@
       <h2 class="section-title">Built, soldered, debugged.</h2>
       <p class="section-sub">Three systems spanning firmware, embedded UI, and motor control — each taken from breadboard to a working, enclosed device.</p>
 
+      <!-- =========================================================
+           FEATURED — pinned above the project grid.
+           To add another featured item, copy one <article class="featured">
+           block below and change: the YouTube ID in the iframe src (the part
+           after /embed/), the ref, title, blurb, tags, and links.
+           For a normal 16:9 video instead of a vertical Short, add the
+           "wide" class: <div class="featured-media wide">.
+           ========================================================= -->
+      <div class="featured-stack">
+
+        <article class="featured">
+          <span class="featured-badge">Featured</span>
+          <div class="featured-media">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/I38NzM2iiBA"
+              title="Worst Alarm Clock Ever — demo"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen></iframe>
+          </div>
+          <div class="featured-body">
+            <div class="card-ref">U1.0 / ESP32 — Video Demo</div>
+            <h3>Worst Alarm Clock Ever</h3>
+            <p>The clock in action — the state machine, the OLED UI, and every hostile wake-up trick it has been taught. Same build as U1.1 below: interrupt-driven encoder input, NTP-synced RTC, live weather over REST, and I2S audio, packed into a 3D-printed enclosure.</p>
+            <div class="tags"><span class="tag">C++</span><span class="tag">ESP32</span><span class="tag">I2S Audio</span><span class="tag">OLED</span><span class="tag">3D Printing</span></div>
+            <div class="featured-links">
+              <a class="card-link" href="https://www.youtube.com/shorts/I38NzM2iiBA" target="_blank" rel="noopener">Watch on YouTube
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </a>
+              <a class="card-link" href="https://github.com/2jaycollins/Worst-Alarm-Clock-Ever" target="_blank" rel="noopener">View repo
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
       <div class="projects-grid">
 
         <article class="card">
@@ -422,6 +495,25 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
           </a>
         </article>
+
+        <!-- ---------------------------------------------------------
+             ADD A PROJECT: copy the block below, uncomment it, and edit
+             the ref, image (or swap in an inline SVG), title, blurb, tags,
+             and repo link. The grid reflows on its own.
+             ---------------------------------------------------------
+        <article class="card">
+          <div class="card-ref">U1.4 / Platform</div>
+          <div class="card-icon">
+            <img src="images/your-photo.jpg" alt="Project name hardware">
+          </div>
+          <h3>Project Name</h3>
+          <p>One or two sentences on what it does and what you built.</p>
+          <div class="tags"><span class="tag">Tag</span><span class="tag">Tag</span></div>
+          <a class="card-link" href="https://github.com/2jaycollins/repo-name" target="_blank" rel="noopener">View repo
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+          </a>
+        </article>
+        -->
 
       </div>
     </div>
