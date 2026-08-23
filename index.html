@@ -414,7 +414,7 @@
     <div class="wrap">
       <div class="designator">U1 — Projects</div>
       <h2 class="section-title">Built, soldered, debugged.</h2>
-      <p class="section-sub">Three systems spanning firmware, embedded UI, and motor control — each taken from breadboard to a working, enclosed device.</p>
+      <p class="section-sub">Firmware, embedded UI, and motor control — each taken from breadboard to a working, enclosed device.</p>
 
       <!-- =========================================================
            FEATURED — pinned above the project grid.
@@ -438,10 +438,11 @@
               allowfullscreen></iframe>
           </div>
           <div class="featured-body">
-            <div class="card-ref">U1.0 / ESP32 — Video Demo</div>
+            <div class="card-ref">U1.1 / ESP32-S3</div>
             <h3>Worst Alarm Clock Ever</h3>
-            <p>The clock in action — the state machine, the OLED UI, and every hostile wake-up trick it has been taught. Same build as U1.1 below: interrupt-driven encoder input, NTP-synced RTC, live weather over REST, and I2S audio, packed into a 3D-printed enclosure.</p>
-            <div class="tags"><span class="tag">C++</span><span class="tag">ESP32</span><span class="tag">I2S Audio</span><span class="tag">OLED</span><span class="tag">3D Printing</span></div>
+            <p>An ESP32-based alarm clock with a real-time state machine, interrupt-driven encoder/button input, SPI OLED display, NTP-synced RTC, and live weather over REST. Built from breadboard to a soldered protoboard in a custom 3D-printed enclosure, with an MQTT hub demonstrating pub/sub IoT architecture.</p>
+            <p>The video shows it running — the display, the knob, and the ways it has been taught to ruin a morning.</p>
+            <div class="tags"><span class="tag">C++</span><span class="tag">ESP32</span><span class="tag">SPI</span><span class="tag">I2S Audio</span><span class="tag">MQTT</span><span class="tag">3D Printing</span></div>
             <div class="featured-links">
               <a class="card-link" href="https://www.youtube.com/shorts/I38NzM2iiBA" target="_blank" rel="noopener">Watch on YouTube
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
@@ -457,6 +458,8 @@
 
       <div class="projects-grid">
 
+        <!-- RETIRED: folded into the Featured block above. Uncomment to put
+             the Worst Alarm Clock Ever back in the grid as its own card.
         <article class="card">
           <div class="card-ref">U1.1 / ESP32-S3</div>
           <div class="card-icon">
@@ -469,6 +472,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
           </a>
         </article>
+        -->
 
         <article class="card">
           <div class="card-ref">U1.2 / STM32</div>
