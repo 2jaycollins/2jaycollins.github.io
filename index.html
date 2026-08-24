@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jay Collins — Electrical Engineer</title>
-<meta name="description" content="Jay Collins — Electrical Engineering student at CU Boulder. Embedded systems, PCB design, and firmware projects.">
+<title>Jay Collins | Electrical Engineer</title>
+<meta name="description" content="Jay Collins is an Electrical Engineering student at CU Boulder who works on embedded systems, PCB design, and firmware.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -205,7 +205,7 @@
   /* Placeholder SVGs (no image yet) keep a fixed box so they don't collapse */
   .card-icon:not(:has(img)){height:130px;}
   .card-icon svg{width:72%; height:72%;}
-  /* Once a real photo is dropped in, the card grows to fit it exactly — full width, no cropping */
+  /* Once a real photo is dropped in, the card grows to fit it exactly, full width and no cropping */
   .card-icon img{width:100%; height:auto; display:block;}
   .card h3{font-family:var(--display); font-size:1.15rem; margin-bottom:10px; color:var(--text);}
   .card p{color:var(--text-dim); font-size:0.92rem; margin-bottom:16px;}
@@ -270,7 +270,7 @@
   .tl-meta{font-family:var(--mono); font-size:0.75rem; color:var(--copper); margin-bottom:10px; letter-spacing:0.03em;}
   .tl-item ul{list-style:none; color:var(--text-dim); font-size:0.92rem;}
   .tl-item li{position:relative; padding-left:16px; margin-bottom:6px;}
-  .tl-item li::before{content:'—'; position:absolute; left:0; color:var(--line);}
+  .tl-item li::before{content:'·'; position:absolute; left:0; color:var(--line);}
 
   /* ---------- SKILLS ---------- */
   .bins{display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:20px;}
@@ -381,7 +381,7 @@
       <div class="home-text">
         <div class="status-line">Status: Online</div>
         <h1 class="name">Jay <span class="accent">Collins</span></h1>
-        <p class="role-line"><strong>Electrical Engineering</strong> student at CU Boulder from Waimea, Hawaii, building embedded systems from bare metal to enclosure — circuits, firmware, and the boards that hold them together.</p>
+        <p class="role-line"><strong>Electrical Engineering</strong> student at CU Boulder, originally from Waimea, Hawaii. I build embedded systems from bare metal up to the enclosure, which means the circuits, the firmware, and the boards that hold them together.</p>
 
         <svg class="scope" viewBox="0 0 800 120" preserveAspectRatio="none" aria-hidden="true">
           <line class="grid-line" x1="0" y1="20" x2="800" y2="20"></line>
@@ -412,12 +412,12 @@
 
   <section id="projects" class="tab-panel" role="tabpanel">
     <div class="wrap">
-      <div class="designator">U1 — Projects</div>
-      <h2 class="section-title">Built, soldered, debugged.</h2>
-      <p class="section-sub">Firmware, embedded UI, and motor control — each taken from breadboard to a working, enclosed device.</p>
+      <div class="designator">U1 / Projects</div>
+      <h2 class="section-title">Things I have built</h2>
+      <p class="section-sub">These projects cover firmware, embedded interfaces, and motor control. Each one started on a breadboard and ended up as a working device in a finished enclosure.</p>
 
       <!-- =========================================================
-           FEATURED — pinned above the project grid.
+           FEATURED: pinned above the project grid.
            To add another featured item, copy one <article class="featured">
            block below and change: the YouTube ID in the iframe src (the part
            after /embed/), the ref, title, blurb, tags, and links.
@@ -431,7 +431,7 @@
           <div class="featured-media">
             <iframe
               src="https://www.youtube-nocookie.com/embed/I38NzM2iiBA"
-              title="Worst Alarm Clock Ever — demo"
+              title="Worst Alarm Clock Ever demo"
               loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerpolicy="strict-origin-when-cross-origin"
@@ -441,7 +441,7 @@
             <div class="card-ref">U1.1 / ESP32-S3</div>
             <h3>Worst Alarm Clock Ever</h3>
             <p>An ESP32-based alarm clock with a real-time state machine, interrupt-driven encoder/button input, SPI OLED display, NTP-synced RTC, and live weather over REST. Built from breadboard to a soldered protoboard in a custom 3D-printed enclosure, with an MQTT hub demonstrating pub/sub IoT architecture.</p>
-            <p>The video shows it running — the display, the knob, and the ways it has been taught to ruin a morning.</p>
+            <p>The video shows the finished clock running, including the display, the knob, and a few of the ways it has been taught to ruin a morning.</p>
             <div class="tags"><span class="tag">C++</span><span class="tag">ESP32</span><span class="tag">SPI</span><span class="tag">I2S Audio</span><span class="tag">MQTT</span><span class="tag">3D Printing</span></div>
             <div class="featured-links">
               <a class="card-link" href="https://www.youtube.com/shorts/I38NzM2iiBA" target="_blank" rel="noopener">Watch on YouTube
@@ -493,7 +493,7 @@
             <img src="images/musical_robot.jpg" alt="BLDC Controlled Driving Robot wiring">
           </div>
           <h3>BLCD Controlled Driving Robot</h3>
-          <p>An Arduino-driven robot that plays music through PWM-driven audio while executing driving patterns — motion control and audio output integrated on a custom motor-control PCB, hand-soldered for reliable connections.</p>
+          <p>An Arduino-driven robot that plays music through PWM audio while it runs driving patterns. Motion control and audio output share a custom motor-control PCB that I hand-soldered so the connections would hold up.</p>
           <div class="tags"><span class="tag">Arduino</span><span class="tag">PWM</span><span class="tag">Custom PCB</span><span class="tag">Motor Control</span></div>
           <a class="card-link" href="https://github.com/2jaycollins/BLDC-Controlled-Robot" target="_blank" rel="noopener">View repo
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
@@ -525,14 +525,14 @@
 
   <section id="experience" class="tab-panel" role="tabpanel">
     <div class="wrap">
-      <div class="designator">U2 — Experience</div>
-      <h2 class="section-title">Where the hours went.</h2>
-      <p class="section-sub">Teaching, tours, and troubleshooting — on campus and at sea.</p>
+      <div class="designator">U2 / Experience</div>
+      <h2 class="section-title">Where I have worked</h2>
+      <p class="section-sub">A mix of teaching on campus in Boulder and working on the water back home in Hawaii.</p>
 
       <div class="timeline">
         <div class="tl-item">
           <div class="tl-role">Engineering Learning Assistant</div>
-          <div class="tl-meta">CU Boulder — Jan 2026 – May 2026</div>
+          <div class="tl-meta">CU Boulder · Jan 2026 to May 2026</div>
           <ul>
             <li>Learning Assistant for Linear Systems, supporting 70+ students in weekly office hours</li>
             <li>Explained convolution and Fourier transforms in clear, accessible language</li>
@@ -540,16 +540,16 @@
         </div>
         <div class="tl-item">
           <div class="tl-role">Deckhand</div>
-          <div class="tl-meta">Hawai'i Nautical — May 2024 – Current</div>
+          <div class="tl-meta">Hawai'i Nautical · May 2024 to present</div>
           <ul>
-            <li>Crew member aboard a 54 ft sailing/snorkeling catamaran — bartending, maintenance, and passenger safety</li>
+            <li>Crew member aboard a 54 ft sailing and snorkeling catamaran, covering bartending, maintenance, and passenger safety</li>
             <li>Assisted with maintenance and monitoring of onboard electrical systems, catching issues before they impacted operations</li>
             <li>Lifeguard and CPR certified, with hands-on emergency response experience</li>
           </ul>
         </div>
         <div class="tl-item">
           <div class="tl-role">Restaurant Host</div>
-          <div class="tl-meta">Foster's Kitchen Waikoloa — Dec 2023 – May 2024</div>
+          <div class="tl-meta">Foster's Kitchen Waikoloa · Dec 2023 to May 2024</div>
           <ul>
             <li>Managed front-of-house flow during peak tourist season, coordinating seating for high-volume dinner service</li>
             <li>Handled over-the-phone take-out orders</li>
@@ -557,7 +557,7 @@
         </div>
         <div class="tl-item">
           <div class="tl-role">Beach Hut Attendant</div>
-          <div class="tl-meta">HYPR HAWAII — April 2021 – Aug 2023</div>
+          <div class="tl-meta">HYPR HAWAII · April 2021 to Aug 2023</div>
           <ul>
             <li>Drove retail sales of outdoor equipment and apparel, consistently upselling lessons and rentals using POS systems and cash handling</li>
             <li>Instructed first-time paddlers in board and kayak technique, prioritizing safety and customer confidence</li>
@@ -569,9 +569,9 @@
 
   <section id="skills" class="tab-panel" role="tabpanel">
     <div class="wrap">
-      <div class="designator">U3 — Skills</div>
-      <h2 class="section-title">The parts bin.</h2>
-      <p class="section-sub">What's on the bench and in the toolchain.</p>
+      <div class="designator">U3 / Skills</div>
+      <h2 class="section-title">Skills and tools</h2>
+      <p class="section-sub">These are the languages, instruments, and software I actually use, on the bench and in the toolchain.</p>
 
       <div class="bins">
         <div class="bin">
@@ -600,14 +600,14 @@
 
   <section id="education" class="tab-panel" role="tabpanel">
     <div class="wrap">
-      <div class="designator">U4 — Education</div>
-      <h2 class="section-title">Boulder, Colorado.</h2>
+      <div class="designator">U4 / Education</div>
+      <h2 class="section-title">Education</h2>
 
       <div class="edu-card">
         <div class="edu-main">
           <h3>University of Colorado Boulder</h3>
-          <div class="tl-meta">B.S. Electrical Engineering — Expected May 2027 · Dean's List</div>
-          <p class="courses">Circuits I &amp; II (A) · Linear Systems (A) · Electronics Design Lab (A–) · Embedded Software Engineering (A) · Data Structures (A) · Programmable Digital Systems (A) · Microelectronics (A) · Fields and Waves (A–) · Calculus I–III · Probability &amp; Statistics (A)</p>
+          <div class="tl-meta">B.S. Electrical Engineering · Expected May 2027 · Dean's List</div>
+          <p class="courses">Circuits I &amp; II (A) · Linear Systems (A) · Electronics Design Lab (A-) · Embedded Software Engineering (A) · Data Structures (A) · Programmable Digital Systems (A) · Microelectronics (A) · Fields and Waves (A-) · Calculus I to III · Probability &amp; Statistics (A)</p>
         </div>
         <div class="gpa-meter">
           <div class="gpa-label">Cumulative GPA</div>
@@ -620,12 +620,12 @@
 
   <section id="resume" class="tab-panel" role="tabpanel">
     <div class="wrap">
-      <div class="designator">U5 — Résumé</div>
-      <h2 class="section-title">The one-page version.</h2>
+      <div class="designator">U5 / Résumé</div>
+      <h2 class="section-title">Résumé</h2>
       <div class="resume-panel">
         <div class="resume-text">
-          <h3>Jay Collins — Résumé.pdf</h3>
-          <p>Full education, experience, and project history in one document — for recruiters, professors, or printing.</p>
+          <h3>Jay Collins Résumé (PDF)</h3>
+          <p>My full education, experience, and project history in one document, ready to print or pass along.</p>
         </div>
         <a href="JayCollinsResume.pdf" download class="btn btn-primary">Download PDF</a>
       </div>
@@ -634,9 +634,9 @@
 
   <section id="contact" class="tab-panel" role="tabpanel">
     <div class="wrap">
-      <div class="designator">U6 — Contact</div>
-      <h2 class="section-title">Let's talk hardware.</h2>
-      <p class="section-sub">Open to embedded systems, hardware, and firmware internships. Based in Boulder, CO — reachable anywhere.</p>
+      <div class="designator">U6 / Contact</div>
+      <h2 class="section-title">Get in touch</h2>
+      <p class="section-sub">I am looking for internships in embedded systems, hardware, and firmware. I am based in Boulder, Colorado, and I am happy to work anywhere.</p>
 
       <div class="contact-layout">
         <div class="contact-info">
