@@ -438,11 +438,11 @@
               allowfullscreen></iframe>
           </div>
           <div class="featured-body">
-            <div class="card-ref">U1.1 / ESP32-S3</div>
+            <div class="card-ref">U1.1 / ESP32</div>
             <h3>Worst Alarm Clock Ever</h3>
-            <p>An ESP32-based alarm clock with a real-time state machine, interrupt-driven encoder/button input, SPI OLED display, NTP-synced RTC, and live weather over REST. Built from breadboard to a soldered protoboard in a custom 3D-printed enclosure, with an MQTT hub demonstrating pub/sub IoT architecture.</p>
+            <p>An ESP32-based alarm clock with a real-time state machine, interrupt-driven encoder/button input, SPI OLED display, NTP-synced RTC, and live weather over REST. Network work runs in a dedicated FreeRTOS task on the second core, so a slow connection never stalls the clock or delays the alarm. Built from breadboard to a soldered protoboard in a custom 3D-printed enclosure.</p>
             <p>The video shows the finished clock running, including the display, the knob, and a few of the ways it has been taught to ruin a morning.</p>
-            <div class="tags"><span class="tag">C++</span><span class="tag">ESP32</span><span class="tag">SPI</span><span class="tag">I2S Audio</span><span class="tag">MQTT</span><span class="tag">3D Printing</span></div>
+            <div class="tags"><span class="tag">C++</span><span class="tag">ESP32</span><span class="tag">SPI</span><span class="tag">I2S Audio</span><span class="tag">FreeRTOS</span><span class="tag">3D Printing</span></div>
             <div class="featured-links">
               <a class="card-link" href="https://www.youtube.com/shorts/I38NzM2iiBA" target="_blank" rel="noopener">Watch on YouTube
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
@@ -461,13 +461,13 @@
         <!-- RETIRED: folded into the Featured block above. Uncomment to put
              the Worst Alarm Clock Ever back in the grid as its own card.
         <article class="card">
-          <div class="card-ref">U1.1 / ESP32-S3</div>
+          <div class="card-ref">U1.1 / ESP32</div>
           <div class="card-icon">
             <img src="images/hero.jpg" alt="Worst Alarm Clock Ever hardware">
           </div>
           <h3>Worst Alarm Clock Ever</h3>
-          <p>An ESP32-based alarm clock with a real-time state machine, interrupt-driven encoder/button input, SPI OLED display, NTP-synced RTC, and live weather over REST. Built from breadboard to a soldered protoboard in a custom 3D-printed enclosure, with an MQTT hub demonstrating pub/sub IoT architecture.</p>
-          <div class="tags"><span class="tag">C++</span><span class="tag">ESP32</span><span class="tag">SPI</span><span class="tag">MQTT</span><span class="tag">3D Printing</span></div>
+          <p>An ESP32-based alarm clock with a real-time state machine, interrupt-driven encoder/button input, SPI OLED display, NTP-synced RTC, and live weather over REST. Network work runs in a dedicated FreeRTOS task on the second core, so a slow connection never stalls the clock or delays the alarm. Built from breadboard to a soldered protoboard in a custom 3D-printed enclosure.</p>
+          <div class="tags"><span class="tag">C++</span><span class="tag">ESP32</span><span class="tag">SPI</span><span class="tag">FreeRTOS</span><span class="tag">3D Printing</span></div>
           <a class="card-link" href="https://github.com/2jaycollins/Worst-Alarm-Clock-Ever" target="_blank" rel="noopener">View repo
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
           </a>
@@ -579,8 +579,12 @@
           <div class="chip-row"><span class="chip">C</span><span class="chip">C++</span><span class="chip">Python</span><span class="chip">RISC-V ASM</span><span class="chip">Verilog</span><span class="chip">LaTeX</span></div>
         </div>
         <div class="bin">
-          <div class="bin-label">Software <span class="count">05</span></div>
-          <div class="chip-row"><span class="chip">LTspice</span><span class="chip">STM32 CubeIDE</span><span class="chip">VS Code</span><span class="chip">GitHub</span><span class="chip">Excel</span></div>
+          <div class="bin-label">Protocols &amp; Interfaces <span class="count">09</span></div>
+          <div class="chip-row"><span class="chip">SPI</span><span class="chip">I2C</span><span class="chip">UART</span><span class="chip">I2S</span><span class="chip">PWM</span><span class="chip">GPIO Interrupts</span><span class="chip">Bluetooth</span><span class="chip">WiFi</span><span class="chip">REST APIs</span></div>
+        </div>
+        <div class="bin">
+          <div class="bin-label">Software &amp; Debugging <span class="count">08</span></div>
+          <div class="chip-row"><span class="chip">FreeRTOS</span><span class="chip">STM32CubeIDE</span><span class="chip">GDB</span><span class="chip">UART/Serial Logging</span><span class="chip">Altium</span><span class="chip">LTspice</span><span class="chip">VS Code</span><span class="chip">GitHub</span></div>
         </div>
         <div class="bin">
           <div class="bin-label">Hardware &amp; Testing <span class="count">08</span></div>
@@ -588,11 +592,11 @@
         </div>
         <div class="bin">
           <div class="bin-label">Core Engineering <span class="count">04</span></div>
-          <div class="chip-row"><span class="chip">Circuit Design</span><span class="chip">Embedded Systems</span><span class="chip">Digital Logic</span><span class="chip">AI</span></div>
+          <div class="chip-row"><span class="chip">Circuit Design</span><span class="chip">Embedded Systems</span><span class="chip">Digital Logic</span><span class="chip">State Machines</span></div>
         </div>
         <div class="bin">
           <div class="bin-label">Professional <span class="count">04</span></div>
-          <div class="chip-row"><span class="chip">Technical Comm.</span><span class="chip">Team Collaboration</span><span class="chip">Presentation</span><span class="chip">Documentation</span></div>
+          <div class="chip-row"><span class="chip">Technical Comm.</span><span class="chip">Team Collaboration</span><span class="chip">Lifeguard Certified</span><span class="chip">Documentation</span></div>
         </div>
       </div>
     </div>
