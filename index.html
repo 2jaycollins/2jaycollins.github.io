@@ -223,6 +223,12 @@
   }
   .card-link:hover{color:var(--amber); border-color:var(--amber);}
   .card-link svg{width:12px; height:12px;}
+  .card-badge{
+    position:absolute; top:0; right:0;
+    font-family:var(--mono); font-size:0.62rem; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--led); border:1px solid var(--led); border-top:none; border-right:none;
+    padding:4px 10px; border-bottom-left-radius:var(--radius);
+  }
 
   /* ---------- FEATURED PROJECTS ---------- */
   .featured-stack{display:flex; flex-direction:column; gap:24px; margin-bottom:40px;}
@@ -497,6 +503,58 @@
           <div class="tags"><span class="tag">Arduino</span><span class="tag">PWM</span><span class="tag">Microcontroller</span><span class="tag">Motor Control</span></div>
           <a class="card-link" href="https://github.com/2jaycollins/BLDC-Controlled-Robot" target="_blank" rel="noopener">View repo
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+          </a>
+        </article>
+
+        <article class="card">
+          <div class="card-ref">U1.4 / STM32</div>
+          <div class="card-icon">
+            <svg viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="color:var(--amber-dim);">
+              <path d="M4 30h14l4-10 5 22 5-30 5 36 5-26 4 12 4-4h14"/>
+              <rect x="74" y="14" width="32" height="32" rx="2"/>
+              <rect x="82" y="22" width="16" height="16"/>
+              <path d="M80 10v4M90 10v4M100 10v4M80 46v4M90 46v4M100 46v4M70 20h4M70 30h4M70 40h4M106 20h4M106 30h4M106 40h4"/>
+            </svg>
+          </div>
+          <h3>Wake-Word Detection on STM32</h3>
+          <p>A real-time keyword spotter in C++ on an STM32F407. A 4-class CNN runs through ExecuTorch on 16 kHz PDM microphone audio, using STFT features and a 1 MB flash budget. Trained with time-shift, gain, and noise augmentation, paired with a tuned voice-activity detector, and validated in Renode simulation and on hardware.</p>
+          <div class="tags"><span class="tag">C++</span><span class="tag">STM32</span><span class="tag">ExecuTorch</span><span class="tag">CNN</span><span class="tag">Renode</span></div>
+        </article>
+
+        <article class="card">
+          <span class="card-badge">In Progress</span>
+          <div class="card-ref">U1.5 / Daisy Seed3</div>
+          <div class="card-icon">
+            <img src="images/ShapeShifter.png" alt="ShapeShifter synthesizer enclosure concept render">
+          </div>
+          <h3>ShapeShifter Hybrid Synthesizer</h3>
+          <p>A portable hybrid synthesizer my 6-person senior capstone team is building for an industry client, on a Daisy Seed3 (STM32H750). I am the software manager and project manager, and I am assembling the breadboard prototype, with all 16 panel controls wired so far. It is designed to blend digital oscillators with a granular sampler, with every sound parameter on its own knob or slider.</p>
+          <div class="tags"><span class="tag">C++</span><span class="tag">STM32H750</span><span class="tag">Audio</span><span class="tag">Project Mgmt</span></div>
+        </article>
+
+        <article class="card">
+          <div class="card-ref">U1.6 / PCB</div>
+          <div class="card-icon">
+            <img src="images/brd1.png" alt="Board-01 555 timer LED driver PCB, assembled and powered">
+          </div>
+          <h3>Board-01: 555 Timer LED Driver</h3>
+          <p>A 5 V PCB designed in Altium where an NE555P astable timer (500 Hz, 60% duty cycle) drives four LEDs through different series resistors, with 1206 SMD parts, isolation switches, and test points. It worked on first assembly, and I used scope measurements to estimate the timer's Thevenin resistance.</p>
+          <div class="tags"><span class="tag">Altium</span><span class="tag">PCB Design</span><span class="tag">SMD</span><span class="tag">555 Timer</span></div>
+          <a class="card-link" href="docs/Collins_Board-01_Report.pdf" download>Download report
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v12M12 16l-5-5M12 16l5-5M5 20h14"/></svg>
+          </a>
+        </article>
+
+        <article class="card">
+          <div class="card-ref">U1.7 / PCB</div>
+          <div class="card-icon">
+            <img src="images/brd2.png" alt="Board-02 hex inverter noise comparison PCB, assembled and powered">
+          </div>
+          <h3>Board-02: Layout Noise Comparison</h3>
+          <p>Two identical 74AHC14 hex inverter circuits driven by an LMC555 on one board, one laid out with a ground plane and a close decoupling capacitor and one without, to compare switching noise. It worked on first power-up, and scope measurements showed the ground plane cut quiet-low ground bounce from 900 mV to 500 mV.</p>
+          <div class="tags"><span class="tag">Altium</span><span class="tag">PCB Design</span><span class="tag">Signal Integrity</span><span class="tag">LDO</span></div>
+          <a class="card-link" href="docs/Collins_Board-02_Report.pdf" download>Download report
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v12M12 16l-5-5M12 16l5-5M5 20h14"/></svg>
           </a>
         </article>
 
