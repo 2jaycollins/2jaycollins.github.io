@@ -437,25 +437,6 @@
            ========================================================= -->
       <div class="featured-stack">
 
-        <article class="featured has-photo">
-          <span class="featured-badge">Featured</span>
-          <div class="featured-media photo">
-            <img src="images/brd3.jpg" alt="Assembled Golden Arduino Board PCB with an ATmega328P, CH340G, and Arduino Uno headers">
-          </div>
-          <div class="featured-body">
-            <div class="card-ref">U1.0 / PCB</div>
-            <h3>Golden Arduino Board - PCB Design</h3>
-            <p>A 2-layer Arduino Uno I designed in Altium and assembled, using the same ATmega328P, CH340G USB to UART chip, and header layout as a commercial board so any shield fits. The layout is built to reduce switching noise, with a continuous ground plane, no copper pour on the signal layer, a decoupling capacitor at every VCC pin, and a second row of ground pins beside the digital I/O. It is the most complex board I have designed and assembled so far, and it worked without any debugging.</p>
-            <p>I measured it against a commercial Uno with a switching noise shield. Near-field emissions dropped to 7% of the commercial board (173 mV to 12 mV, against a target under 10%), and quiet-high droop dropped to about 30% (about 280 mV to 80 mV). Quiet-low ground bounce improved only 8 to 18% and slammer noise stayed about the same, since those are set mostly by the package ground inductance and the shield itself.</p>
-            <div class="tags"><span class="tag">Altium</span><span class="tag">PCB Design</span><span class="tag">ATmega328P</span><span class="tag">SMD</span><span class="tag">Signal Integrity</span></div>
-            <div class="featured-links">
-              <a class="card-link" href="docs/Collins_Board-03_Report.pdf" download>Download report
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v12M12 16l-5-5M12 16l5-5M5 20h14"/></svg>
-              </a>
-            </div>
-          </div>
-        </article>
-
         <article class="featured">
           <span class="featured-badge">Featured</span>
           <div class="featured-media">
@@ -484,6 +465,25 @@
           </div>
         </article>
 
+        <article class="featured has-photo">
+          <span class="featured-badge">Featured</span>
+          <div class="featured-media photo">
+            <img src="images/brd3.jpg" alt="Assembled Golden Arduino Board PCB with an ATmega328P, CH340G, and Arduino Uno headers">
+          </div>
+          <div class="featured-body">
+            <div class="card-ref">U1.2 / PCB</div>
+            <h3>Golden Arduino Board - PCB Design</h3>
+            <p>A 2-layer Arduino Uno I designed in Altium and assembled, using the same ATmega328P, CH340G USB to UART chip, and header layout as a commercial board so any shield fits. The layout is built to reduce switching noise, with a continuous ground plane, no copper pour on the signal layer, a decoupling capacitor at every VCC pin, and a second row of ground pins beside the digital I/O. It is the most complex board I have designed and assembled so far, and it worked without any debugging.</p>
+            <p>I measured it against a commercial Uno with a switching noise shield. Near-field emissions dropped to 7% of the commercial board (173 mV to 12 mV, against a target under 10%), and quiet-high droop dropped to about 30% (about 280 mV to 80 mV). Quiet-low ground bounce improved only 8 to 18% and slammer noise stayed about the same, since those are set mostly by the package ground inductance and the shield itself.</p>
+            <div class="tags"><span class="tag">Altium</span><span class="tag">PCB Design</span><span class="tag">ATmega328P</span><span class="tag">SMD</span><span class="tag">Signal Integrity</span></div>
+            <div class="featured-links">
+              <a class="card-link" href="docs/Collins_Board-03_Report.pdf" download>Download report
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v12M12 16l-5-5M12 16l5-5M5 20h14"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
       </div>
 
       <div class="projects-grid">
@@ -505,20 +505,18 @@
         -->
 
         <article class="card">
-          <div class="card-ref">U1.2 / STM32</div>
+          <span class="card-badge">In Progress</span>
+          <div class="card-ref">U1.3 / Daisy Seed3</div>
           <div class="card-icon">
-            <img src="images/roulette.jpg" alt="STM32 Casino Game hardware">
+            <img src="images/ShapeShifter.png" alt="ShapeShifter synthesizer enclosure concept render">
           </div>
-          <h3>STM32 Casino Game</h3>
-          <p>Blackjack and roulette modes on an STM32 microcontroller with an LCD display and touchscreen input. Game logic in C, including random number generation and interaction handling, tuned for a responsive feel.</p>
-          <div class="tags"><span class="tag">C</span><span class="tag">STM32</span><span class="tag">LCD</span><span class="tag">Touchscreen</span></div>
-          <a class="card-link" href="https://github.com/2jaycollins/casino-game" target="_blank" rel="noopener">View repo
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-          </a>
+          <h3>ShapeShifter Hybrid Synthesizer</h3>
+          <p>A portable hybrid synthesizer my 6-person senior capstone team built for an industry client, on a Daisy Seed3 (STM32H750). As project manager and software manager, I built the full breadboard prototype, wiring 32 panel controls into a C++ audio engine with oscillators and a granular sampler. The firmware splits a real-time audio callback from a control loop that reads the controls through 12-bit SPI ADCs and drives preset-recall LEDs over I2C.</p>
+          <div class="tags"><span class="tag">C++</span><span class="tag">STM32H750</span><span class="tag">Audio</span><span class="tag">Project Mgmt</span></div>
         </article>
 
         <article class="card">
-          <div class="card-ref">U1.3 / Arduino</div>
+          <div class="card-ref">U1.4 / Arduino</div>
           <div class="card-icon">
             <img src="images/musical_robot.jpg" alt="BLDC Controlled Driving Robot wiring">
           </div>
@@ -531,7 +529,7 @@
         </article>
 
         <article class="card">
-          <div class="card-ref">U1.4 / STM32</div>
+          <div class="card-ref">U1.5 / STM32</div>
           <div class="card-icon">
             <svg viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="color:var(--amber-dim);">
               <path d="M4 30h14l4-10 5 22 5-30 5 36 5-26 4 12 4-4h14"/>
@@ -546,18 +544,20 @@
         </article>
 
         <article class="card">
-          <span class="card-badge">In Progress</span>
-          <div class="card-ref">U1.5 / Daisy Seed3</div>
+          <div class="card-ref">U1.6 / PCB</div>
           <div class="card-icon">
-            <img src="images/ShapeShifter.png" alt="ShapeShifter synthesizer enclosure concept render">
+            <img src="images/brd2.png" alt="Board-02 hex inverter noise comparison PCB, assembled and powered">
           </div>
-          <h3>ShapeShifter Hybrid Synthesizer</h3>
-          <p>A portable hybrid synthesizer my 6-person senior capstone team built for an industry client, on a Daisy Seed3 (STM32H750). As project manager and software manager, I built the full breadboard prototype, wiring 32 panel controls into a C++ audio engine with oscillators and a granular sampler. The firmware splits a real-time audio callback from a control loop that reads the controls through 12-bit SPI ADCs and drives preset-recall LEDs over I2C.</p>
-          <div class="tags"><span class="tag">C++</span><span class="tag">STM32H750</span><span class="tag">Audio</span><span class="tag">Project Mgmt</span></div>
+          <h3>Board-02: Layout Noise Comparison</h3>
+          <p>Two identical 74AHC14 hex inverter circuits driven by an LMC555 on one board, one laid out with a ground plane and a close decoupling capacitor and one without, to compare switching noise. It worked on first power-up, and scope measurements showed the ground plane cut quiet-low ground bounce from 900 mV to 500 mV.</p>
+          <div class="tags"><span class="tag">Altium</span><span class="tag">PCB Design</span><span class="tag">Signal Integrity</span><span class="tag">LDO</span></div>
+          <a class="card-link" href="docs/Collins_Board-02_Report.pdf" download>Download report
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v12M12 16l-5-5M12 16l5-5M5 20h14"/></svg>
+          </a>
         </article>
 
         <article class="card">
-          <div class="card-ref">U1.6 / PCB</div>
+          <div class="card-ref">U1.7 / PCB</div>
           <div class="card-icon">
             <img src="images/brd1.png" alt="Board-01 555 timer LED driver PCB, assembled and powered">
           </div>
@@ -570,15 +570,15 @@
         </article>
 
         <article class="card">
-          <div class="card-ref">U1.7 / PCB</div>
+          <div class="card-ref">U1.8 / STM32</div>
           <div class="card-icon">
-            <img src="images/brd2.png" alt="Board-02 hex inverter noise comparison PCB, assembled and powered">
+            <img src="images/roulette.jpg" alt="STM32 Casino Game hardware">
           </div>
-          <h3>Board-02: Layout Noise Comparison</h3>
-          <p>Two identical 74AHC14 hex inverter circuits driven by an LMC555 on one board, one laid out with a ground plane and a close decoupling capacitor and one without, to compare switching noise. It worked on first power-up, and scope measurements showed the ground plane cut quiet-low ground bounce from 900 mV to 500 mV.</p>
-          <div class="tags"><span class="tag">Altium</span><span class="tag">PCB Design</span><span class="tag">Signal Integrity</span><span class="tag">LDO</span></div>
-          <a class="card-link" href="docs/Collins_Board-02_Report.pdf" download>Download report
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v12M12 16l-5-5M12 16l5-5M5 20h14"/></svg>
+          <h3>STM32 Casino Game</h3>
+          <p>Blackjack and roulette modes on an STM32 microcontroller with an LCD display and touchscreen input. Game logic in C, including random number generation and interaction handling, tuned for a responsive feel.</p>
+          <div class="tags"><span class="tag">C</span><span class="tag">STM32</span><span class="tag">LCD</span><span class="tag">Touchscreen</span></div>
+          <a class="card-link" href="https://github.com/2jaycollins/casino-game" target="_blank" rel="noopener">View repo
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
           </a>
         </article>
 
