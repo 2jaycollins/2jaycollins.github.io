@@ -257,6 +257,9 @@
   .featured-media::before{content:''; display:block; padding-top:177.78%;} /* 9:16 - vertical / Shorts */
   .featured-media.wide::before{padding-top:56.25%;}                        /* 16:9 - normal video */
   .featured-media iframe{position:absolute; inset:0; width:100%; height:100%; border:0;}
+  .featured.has-photo{grid-template-columns:minmax(260px, 400px) 1fr;}     /* photo instead of video */
+  .featured-media.photo::before{display:none;}
+  .featured-media.photo img{width:100%; height:auto; display:block;}
   .featured-body{min-width:0;}
   .featured-body h3{font-family:var(--display); font-size:1.3rem; margin-bottom:10px; color:var(--text);}
   .featured-body p{color:var(--text-dim); font-size:0.94rem; margin-bottom:16px;}
@@ -357,7 +360,7 @@
     .home-grid{flex-direction:column-reverse; text-align:left; padding:40px 0;}
     .portrait-frame{width:180px; height:220px;}
     .edu-card{flex-direction:column;}
-    .featured{grid-template-columns:1fr; gap:20px;}
+    .featured, .featured.has-photo{grid-template-columns:1fr; gap:20px;}
     .featured-media{max-width:320px; margin:0 auto;}
   }
 </style>
@@ -429,8 +432,29 @@
            after /embed/), the ref, title, blurb, tags, and links.
            For a normal 16:9 video instead of a vertical Short, add the
            "wide" class: <div class="featured-media wide">.
+           For a photo instead of a video, add "has-photo" to the article and
+           use <div class="featured-media photo"><img ...></div>.
            ========================================================= -->
       <div class="featured-stack">
+
+        <article class="featured has-photo">
+          <span class="featured-badge">Featured</span>
+          <div class="featured-media photo">
+            <img src="images/brd3.jpg" alt="Assembled Golden Arduino Board PCB with an ATmega328P, CH340G, and Arduino Uno headers">
+          </div>
+          <div class="featured-body">
+            <div class="card-ref">U1.0 / PCB</div>
+            <h3>Golden Arduino Board - PCB Design</h3>
+            <p>A 2-layer Arduino Uno I designed in Altium and assembled, using the same ATmega328P, CH340G USB to UART chip, and header layout as a commercial board so any shield fits. The layout is built to reduce switching noise, with a continuous ground plane, no copper pour on the signal layer, a decoupling capacitor at every VCC pin, and a second row of ground pins beside the digital I/O. It is the most complex board I have designed and assembled so far, and it worked without any debugging.</p>
+            <p>I measured it against a commercial Uno with a switching noise shield. Near-field emissions dropped to 7% of the commercial board (173 mV to 12 mV, against a target under 10%), and quiet-high droop dropped to about 30% (about 280 mV to 80 mV). Quiet-low ground bounce improved only 8 to 18% and slammer noise stayed about the same, since those are set mostly by the package ground inductance and the shield itself.</p>
+            <div class="tags"><span class="tag">Altium</span><span class="tag">PCB Design</span><span class="tag">ATmega328P</span><span class="tag">SMD</span><span class="tag">Signal Integrity</span></div>
+            <div class="featured-links">
+              <a class="card-link" href="docs/Collins_Board-03_Report.pdf" download>Download report
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v12M12 16l-5-5M12 16l5-5M5 20h14"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
 
         <article class="featured">
           <span class="featured-badge">Featured</span>
