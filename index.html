@@ -106,10 +106,9 @@
   .section-sub{color:var(--text-dim); max-width:620px; margin-bottom:56px; font-size:1rem;}
 
   /* ---------- HOME ---------- */
-  #home.tab-panel{padding-top:56px;}
+  #home.tab-panel{padding:64px 0 40px;}
   .home-grid{
-    min-height:calc(100vh - 56px);
-    display:flex; align-items:center; gap:56px; flex-wrap:wrap; padding:56px 0;
+    display:flex; align-items:center; gap:56px; flex-wrap:wrap;
   }
   .home-text{flex:1 1 420px; min-width:280px;}
   .status-line{
@@ -339,6 +338,39 @@
   .pin:hover .pin-head{border-color:var(--amber); color:var(--amber);}
   .pin-head svg{width:16px; height:16px;}
   .pin-label{font-family:var(--mono); font-size:0.65rem; color:var(--text-dim); letter-spacing:0.06em;}
+  .msg-card{
+    flex:1 1 420px; background:var(--surface); border:1px solid var(--line);
+    border-radius:14px; padding:32px 36px; align-self:flex-start;
+  }
+  .msg-card h3{font-family:var(--display); font-size:1.5rem; margin-bottom:22px;}
+  .msg-row{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
+  .msg-field{display:flex; flex-direction:column; gap:8px; margin-bottom:20px;}
+  .msg-field label{font-family:var(--mono); font-size:0.78rem; color:var(--text-dim); letter-spacing:0.04em;}
+  .msg-field input, .msg-field textarea{
+    font-family:var(--body); font-size:0.95rem; color:var(--text);
+    background:var(--bg-alt); border:1px solid var(--line); border-radius:12px;
+    padding:14px 16px; width:100%; transition:border-color 0.2s, box-shadow 0.2s;
+  }
+  .msg-field textarea{min-height:170px; resize:vertical;}
+  .msg-field input:focus, .msg-field textarea:focus{
+    outline:none; border-color:var(--amber); box-shadow:0 0 0 3px rgba(255,176,0,0.15);
+  }
+  .msg-hp{position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;}
+  .msg-btn{
+    font-family:var(--body); font-weight:600; font-size:0.95rem;
+    background:var(--amber); color:var(--bg); border:none; border-radius:999px;
+    padding:15px 30px; cursor:pointer; transition:opacity 0.2s, transform 0.1s;
+  }
+  .msg-btn:hover{opacity:0.88;}
+  .msg-btn:active{transform:translateY(1px);}
+  .msg-btn:disabled{opacity:0.5; cursor:default;}
+  .msg-status{font-family:var(--mono); font-size:0.8rem; margin-top:14px; min-height:1.2em;}
+  .msg-status.ok{color:var(--led);}
+  .msg-status.err{color:var(--copper);}
+  @media (max-width:560px){
+    .msg-row{grid-template-columns:1fr; gap:0;}
+    .msg-card{padding:24px 20px;}
+  }
   .legal{
     font-family:var(--mono); font-size:0.7rem; color:var(--text-dim); opacity:0.6;
     margin-top:56px; padding-top:24px; border-top:1px solid var(--line);
@@ -357,7 +389,7 @@
       display:block; background:none; border:1px solid var(--line); color:var(--text);
       width:38px; height:38px; border-radius:var(--radius); cursor:pointer; font-family:var(--mono);
     }
-    .home-grid{flex-direction:column-reverse; text-align:left; padding:40px 0;}
+    .home-grid{flex-direction:column-reverse; text-align:left;}
     .portrait-frame{width:180px; height:220px;}
     .edu-card{flex-direction:column;}
     .featured, .featured.has-photo{grid-template-columns:1fr; gap:20px;}
@@ -390,7 +422,7 @@
       <div class="home-text">
         <div class="status-line">Status: Online</div>
         <h1 class="name">Jay <span class="accent">Collins</span></h1>
-        <p class="role-line"><strong>Electrical Engineering</strong> student at CU Boulder, originally from Waimea, Hawaii. Embedded systems are my strongsuit, but I enjoy working on any type of engineering project.</p>
+        <p class="role-line"><strong>Electrical Engineering</strong> student at CU Boulder, originally from Waimea, Hawaii. Embedded systems are my strong suit, but I enjoy working on any type of engineering project. I also enjoy reading, playing basketball, and surfing.</p>
 
         <svg class="scope" viewBox="0 0 800 120" preserveAspectRatio="none" aria-hidden="true">
           <line class="grid-line" x1="0" y1="20" x2="800" y2="20"></line>
@@ -753,6 +785,31 @@
             <span>Boulder, CO</span>
           </div>
         </div>
+
+        <form class="msg-card" id="contactForm" action="https://formspree.io/f/xnppejlk" method="POST">
+          <h3>Send me a message</h3>
+          <div class="msg-row">
+            <div class="msg-field">
+              <label for="cf-name">Name</label>
+              <input id="cf-name" name="name" type="text" autocomplete="name" required>
+            </div>
+            <div class="msg-field">
+              <label for="cf-email">Email</label>
+              <input id="cf-email" name="email" type="email" autocomplete="email" required>
+            </div>
+          </div>
+          <div class="msg-field">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="message" required></textarea>
+          </div>
+          <input type="hidden" name="_subject" value="New message from your portfolio site">
+          <div class="msg-hp" aria-hidden="true">
+            <label for="cf-gotcha">Leave this empty</label>
+            <input id="cf-gotcha" type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+          </div>
+          <button class="msg-btn" type="submit">Send message</button>
+          <div class="msg-status" id="contactStatus" role="status" aria-live="polite"></div>
+        </form>
       </div>
     </div>
   </section>
@@ -790,6 +847,34 @@
 
   const initial = (location.hash || '').replace('#', '');
   activateTab(initial || 'home');
+
+  const contactForm = document.getElementById('contactForm');
+  const contactStatus = document.getElementById('contactStatus');
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = contactForm.querySelector('.msg-btn');
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+    contactStatus.className = 'msg-status';
+    contactStatus.textContent = '';
+    try {
+      const res = await fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (!res.ok) throw new Error();
+      contactForm.reset();
+      contactStatus.classList.add('ok');
+      contactStatus.textContent = 'Thanks! Your message was sent.';
+    } catch {
+      contactStatus.classList.add('err');
+      contactStatus.textContent = 'Something went wrong. Please email me directly.';
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Send message';
+    }
+  });
 </script>
 
 </body>
